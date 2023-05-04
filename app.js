@@ -11,8 +11,7 @@ canvas.height = canvasHeight;
 // ANIMATION
 let animate;
 
-let go = new GameObject(canvasWidth / 2, canvasHeight / 2, 50, 50);
-
+let player = new Player(canvasWidth / 2 -25, canvasHeight / 2 -25, 50, 50);
 
 
 
@@ -22,7 +21,7 @@ let go = new GameObject(canvasWidth / 2, canvasHeight / 2, 50, 50);
 function animator() {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     animate = requestAnimationFrame(animator);
-    go.draw(ctx);
+    player.draw(ctx);
 }
 animator()
 
