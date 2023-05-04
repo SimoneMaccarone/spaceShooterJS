@@ -62,6 +62,9 @@ function checkCollision() {
         }
 
     }
+    function loopBackground(){
+        ctx.
+    }
 }
 
 animator()
