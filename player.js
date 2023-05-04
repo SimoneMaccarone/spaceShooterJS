@@ -10,17 +10,20 @@ class Player extends GameObject {
     draw(ctx) {
         super.draw(ctx);
     }
-
+// ----- CONTROLLER -----
     controls() {
-        // pressione Up sul tasto
-        document.onkeyup = (keyEvent) => {
-            console.log('keyEventUp', keyEvent)
-        }
         // pressione Down sul tasto
         document.onkeydown = (keyEvent) => {
-            console.log('keyEventDown', keyEvent)
-        }
+            console.log('keyEventDown', keyEvent);
+            this.controller[keyEvent.key]=true;
 
+        }
+        // pressione Up sul tasto
+        document.onkeyup = (keyEvent) => {
+            console.log('keyEventUp', keyEvent);
+            this.controller[keyEvent.key]=false+;
+        }
+        
 
         // document.onkeydown = (keyEvent) => { 
         //     console.log('keyEvent', keyEvent);
