@@ -8,8 +8,12 @@ class GameObject {
     }
 
     draw(ctx) {
-        ctx.fillStyle = 'red'
+        ctx.fillStyle = "red"
         ctx.fillRect(this.x, this.y, this.width, this.height)
     }
 
+
+    
 }
+
+

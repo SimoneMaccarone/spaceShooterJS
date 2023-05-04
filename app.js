@@ -10,7 +10,20 @@ canvas.height = canvasHeight;
 
 // ANIMATION
 let animate;
-function animator(){
-    animate= requestAnimationFrame(animator);
+
+let go = new GameObject(canvasWidth / 2, canvasHeight / 2, 50, 50);
+
+
+
+
+
+
+// ANIMATION
+function animator() {
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+    animate = requestAnimationFrame(animator);
+    go.draw(ctx);
 }
 animator()
+
+
