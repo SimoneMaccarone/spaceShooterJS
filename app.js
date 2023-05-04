@@ -22,6 +22,7 @@ function animator() {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     animate = requestAnimationFrame(animator);
     player.draw(ctx);
+    player.controls()
 }
 animator()
 
