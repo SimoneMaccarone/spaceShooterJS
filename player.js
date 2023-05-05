@@ -1,7 +1,7 @@
 class Player extends GameObject {
 
-    constructor(x, y, width, height) {
-        super(x, y, width, height);
+    constructor(x, y, width, height, color = 'green',imgUrl) {
+        super(x, y, width, height, color,imgUrl);
         this.speed = 10;
         this.controller = {};
         this.projectiles = [];
@@ -49,11 +49,13 @@ class Player extends GameObject {
             this.baseAttack();
         }
     }
-
+    // BASE ATTACK
     baseAttack() {
         if (this.attakCoolDown <= 0) {
-            let projectile = new Projectiles(this.x + (this.width / 2), this.y, 3, 9);
-            this.projectiles.push(projectile)
+            let projectileL = new Projectiles(this.x, this.y - 25, 3, 20);
+            let projectileR = new Projectiles(this.x + this.width - 3, this.y - 25, 3, 20);
+
+            this.projectiles.push(projectileL, projectileR);
             this.attakCoolDown = 10;
         }
     }

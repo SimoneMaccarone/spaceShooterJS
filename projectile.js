@@ -1,11 +1,11 @@
-class Projectiles extends GameObject{
+class Projectiles extends GameObject {
 
-    constructor(x,y,width,height){
-        super(x, y, width, height);
+    constructor(x, y, width, height, color = 'yellow',imgUrl) {
+        super(x, y, width, height, color,imgUrl);
         this.speed = 10;
     }
 
-    move(){
+    move() {
         this.y -= this.speed;
     }
 

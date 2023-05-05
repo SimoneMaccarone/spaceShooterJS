@@ -8,10 +8,10 @@ let canvasHeight = window.innerHeight;
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 
-// ANIMATION
 let animate;
 
-let player = new Player(canvasWidth / 2 - 25, canvasHeight / 2 - 25, 50, 50);
+// PLAYER
+let player = new Player(canvasWidth / 2 - 25, canvasHeight / 2 - 25, 50, 50,'purple','./assets/sgarbi-1.jpg ');
 
 let enemySpawnCoolDown = 120;
 let allEnemies = [];
@@ -36,18 +36,18 @@ function animator() {
     allEnemies.forEach(enemy => {
         enemy.draw(ctx);
         enemy.move();
-    
-    checkCollision()
-    allEnemies= allEnemies.filter(enemy => enemy.healthPoints >0)
+
+        checkCollision()
+        allEnemies = allEnemies.filter(enemy => enemy.healthPoints > 0)
     })
 }
-
+// ENEMY SPAWN
 function enemySpawn() {
     const randomX = Math.random() * (canvasWidth - 50)
-    let enemy = new BaseEnemy(randomX, -60, 50, 50);
+    let enemy = new BaseEnemy(randomX, -60, 100, 100,null,'./assets/salvinik.png');
     allEnemies.push(enemy);
 }
-
+// COLLISION
 function checkCollision() {
     let playerAssets = [player, ...player.projectiles]
     for (let i = 0; i < playerAssets.length; i++) {
@@ -56,15 +56,13 @@ function checkCollision() {
             const enemy = allEnemies[j];
             if (enemy.x < (pA.x + pA.x) && (enemy.x + enemy.width) > (pA.x && enemy.y) < (pA.y + pA.height) && (enemy.y + enemy.height) > pA.y) {
                 enemy.healthPoints--;
-                console.log('enemy',enemy);
+                console.log('enemy', enemy);
             }
-
         }
+    }
+    // function loopBackground(){
+    // }
 
-    }
-    function loopBackground(){
-        ctx.
-    }
 }
 
 animator()
