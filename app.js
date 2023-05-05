@@ -30,7 +30,7 @@ function animator() {
     enemySpawnCoolDown--;
     if (enemySpawnCoolDown <= 0) {
         enemySpawn();
-        enemySpawnCoolDown = 120;
+        enemySpawnCoolDown = 50;
     }
 
     allEnemies.forEach(enemy => {
@@ -49,20 +49,21 @@ function enemySpawn() {
 }
 // COLLISION
 function checkCollision() {
-    let playerAssets = [player, ...player.projectiles]
+    let playerAssets = [player, ...player.projectiles];
+    
     for (let i = 0; i < playerAssets.length; i++) {
         const pA = playerAssets[i];
         for (let j = 0; j < allEnemies.length; j++) {
             const enemy = allEnemies[j];
-            if (enemy.x < (pA.x + pA.x) && (enemy.x + enemy.width) > (pA.x && enemy.y) < (pA.y + pA.height) && (enemy.y + enemy.height) > pA.y) {
-                enemy.healthPoints--;
-                console.log('enemy', enemy);
+
+            if(pA.isColliding(enemy)){
+                pA.collision();
+                enemy.collision();
             }
         }
     }
-    // function loopBackground(){
-    // }
-
+    allEnemies= allEnemies.filter(enemy => enemy.isAlive);
+    player.projectiles= player.projectiles.filter(projectiles=>projectiles)
 }
 
 animator()

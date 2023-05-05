@@ -9,4 +9,8 @@ class Projectiles extends GameObject {
         this.y -= this.speed;
     }
 
+    collision(){
+        
+    }
+
 }
