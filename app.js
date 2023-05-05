@@ -67,3 +67,8 @@ function checkCollision() {
 }
 
 animator()
+
+
+for (const iterator of object) {
+    
+}
