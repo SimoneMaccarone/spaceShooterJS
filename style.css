@@ -5,9 +5,9 @@ html {
     margin: 0px;
     overflow: hidden;
     background-color: rgba(14, 14, 14, 0.5);
-    background-image: url(./assets/governo-jpg.webp);
+    background-image: url(./assets/space.jpg);
     background-repeat: no-repeat;
-    background-size: 75vw;
+    background-size: cover;
     background-position: center;
     
 }

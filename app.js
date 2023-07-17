@@ -11,7 +11,7 @@ canvas.height = canvasHeight;
 let animate;
 
 // PLAYER
-let player = new Player(canvasWidth / 2 - 25, canvasHeight / 2 - 25, 50, 50,'purple','./assets/sgarbi-1.jpg ');
+let player = new Player(canvasWidth / 2 - 25, canvasHeight / 2 - 25, 50, 50,'purple','./assets/shuttle.png');
 
 let enemySpawnCoolDown = 120;
 let allEnemies = [];
@@ -44,7 +44,7 @@ function animator() {
 // ENEMY SPAWN
 function enemySpawn() {
     const randomX = Math.random() * (canvasWidth - 50)
-    let enemy = new BaseEnemy(randomX, -60, 100, 100,null,'./assets/salvinik.png');
+    let enemy = new BaseEnemy(randomX, -60, 50, 50,null,'./assets/enemy.png');
     allEnemies.push(enemy);
 }
 // COLLISION
